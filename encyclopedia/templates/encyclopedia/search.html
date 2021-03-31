@@ -1,0 +1,20 @@
+<!-- {% extends "encyclopedia/layout.html" %}
+{% block body %}
+        <form action="{% url 'search' %}" method="GET">
+            {{form}}
+            <input type="submit">
+        </form>
+        <a id= "view_link" href = "{% url 'index' %}"> View Tasks</a>
+{% endblock %} -->
+
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+     {{entry|safe}}
+
+{% endblock %}

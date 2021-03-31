@@ -1,0 +1,28 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'newPage' %}" method="post">
+    {% if existing %}
+    <div class="alert alert-danger" role="alert">
+        This entry already exists. For edit, <a   href="/wiki/{{ entry }}" class="alert-link">Click here</a>
+    </div>
+    <div class="alert alert-info" role="alert">
+        Or Change the entry name
+    </div>
+    {% endif %}
+
+    <div class="form-group">
+    <form action = "{% url 'newPage'%}" method = "post"> 
+        {% csrf_token %} 
+        {{ form.as_p}} 
+        <input type="submit" value="Submit">  -->
+    </form>
+    </div>
+
+</form>
+{% endblock %}
+
